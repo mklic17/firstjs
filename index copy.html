@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <!--<link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css"> -->
+  </head>
+  <body>
+
+    <form>
+      <p>
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName">
+
+      </p>
+      <p>
+        <!--<input type="submit"  value="Go"> -->
+        <button type="submit">Go</button>
+
+      </p>
+    </form>
+
+    <script type="text/javascript">
+      var myForm = document.querySelector('form');
+      myForm.onsubmit = function(ev) { // ev = event
+        ev.preventDefault(); // prevents the default behavior because after our function completes it wont do anything
+        console.log(this.firstName.value);
+
+        // this the element of the page by which the event fired
+
+      }; // is an assignment so semicolon
+    </script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
