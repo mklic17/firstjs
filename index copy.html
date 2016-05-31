@@ -5,30 +5,50 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
-    <!--<link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css"> -->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
+    <section>
+      <div>
+        <form>
+          <p>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName">
 
-    <form>
-      <p>
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName">
+          </p>
+          <p>
+            <label for="hairColor">Hair Color</label>
+            <input type="color" name="hairColor" required>
 
-      </p>
-      <p>
-        <!--<input type="submit"  value="Go"> -->
-        <button type="submit">Go</button>
+          </p>
+          <p>
+                <label for="age">Age</label>
+                <input type="number" name="age" placeholder="Your Age" required>
+              </p>
+              <label for="birthplace">Birthplace</label>
+                <input type="text" name="birthplace" placeholder="Where were you born?" required>
+              <p>
+          <p>
+            <!--<input type="submit"  value="Go"> -->
+            <button type="submit">Go</button>
 
-      </p>
-    </form>
+          </p>
+        </form>
 
+        <div class="details">
+
+        </div>
+      </div>
+  </section>
     <script type="text/javascript">
       var myForm = document.querySelector('form');
       myForm.onsubmit = function(ev) { // ev = event
+        //debugger; //haults execution, go to the debugger and check it out
         ev.preventDefault(); // prevents the default behavior because after our function completes it wont do anything
-        console.log(this.firstName.value);
-
+        //console.log(this.firstName.value);
+        var details = document.querySelector('div.details');
+        details.innerText += this.firstName.value;
         // this the element of the page by which the event fired
 
       }; // is an assignment so semicolon
