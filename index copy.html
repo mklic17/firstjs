@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
-    <link rel="stylesheet" href="css/foundation.css">
+    <!--<link rel="stylesheet" href="css/foundation.css"> -->
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
@@ -34,12 +34,17 @@
           </p>
         </form>
 
-        <div class="details" list-style:none;>
-          <ul>
-            <li id="first"></li>
-            <li id="second"></li>
-            <li id="third"></li>
-            <li id="fourth"></li>
+        <div class="details" id="myOwnThing">
+          <dl>
+            <dt id="first"></dt>
+            <dd>This is a field for your name.</dd>
+            <dt id="second"></dt>
+            <dd>This is a field for your hair color.</dd>
+            <dt id="third"></dt>
+            <dd>This is a field for your age.</dd>
+            <dt id="fourth"></dt>
+            <dd>This is a field for the place that you were born.</dd>
+          </dl>
         </div>
       </div>
   </section>
@@ -49,14 +54,14 @@
         //debugger; //haults execution, go to the debugger and check it out
         ev.preventDefault(); // prevents the default behavior because after our function completes it wont do anything
         //console.log(this.firstName.value);
-        var first = document.querySelector('li#first');
-        first.innerText += this.firstName.value;
-        var second = document.querySelector('li#second');
-        second.innerText += this.hairColor.value;
-        var third = document.querySelector('li#third');
-        third.innerText += this.age.value;
-        var fourth = document.querySelector('li#fourth');
-        fourth.innerText += this.birthplace.value;
+        var first = document.querySelector('dt#first');
+        first.innerText = this.firstName.value;
+        var second = document.querySelector('dt#second');
+        second.innerText = this.hairColor.value;
+        var third = document.querySelector('dt#third');
+        third.innerText = this.age.value;
+        var fourth = document.querySelector('dt#fourth');
+        fourth.innerText = this.birthplace.value;
 
 
         // this the element of the page by which the event fired
