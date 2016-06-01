@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
-    <!--<link rel="stylesheet" href="css/foundation.css"> -->
+    <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
@@ -34,8 +34,16 @@
           </p>
         </form>
 
-        <div class="details" id="myOwnThing">
-          <dl>
+          <!--Example 1 -->
+<!--
+        <div class="details">
+
+        </d>
+-->
+
+              <!--Example 2 -->
+<!--    <div class="details" id="myOwnThing">
+          <dl class="findMe">
             <dt id="first"></dt>
             <dd>This is a field for your name.</dd>
             <dt id="second"></dt>
@@ -46,25 +54,64 @@
             <dd>This is a field for the place that you were born.</dd>
           </dl>
         </div>
+-->
+
+  <div class="details">
+
+  </div>
+
       </div>
+
   </section>
     <script type="text/javascript">
       var myForm = document.querySelector('form');
       myForm.onsubmit = function(ev) { // ev = event
+      //document.querySelector('form').onsubmit = function(ev) {
         //debugger; //haults execution, go to the debugger and check it out
         ev.preventDefault(); // prevents the default behavior because after our function completes it wont do anything
         //console.log(this.firstName.value);
-        var first = document.querySelector('dt#first');
-        first.innerText = this.firstName.value;
-        var second = document.querySelector('dt#second');
-        second.innerText = this.hairColor.value;
-        var third = document.querySelector('dt#third');
-        third.innerText = this.age.value;
-        var fourth = document.querySelector('dt#fourth');
-        fourth.innerText = this.birthplace.value;
-
-
         // this the element of the page by which the event fired
+
+              //Example 1
+        //var details = document.querySelector('div.details');
+        //details.innerText = this.firstName.value;
+
+
+
+              //Example 2
+        //var first = document.querySelector('dt#first');
+        //first.innerText = this.firstName.value;
+        //var second = document.querySelector('dt#second');
+        //var hexadecimalNumber = this.hairColor.value;
+        ////second.innerText = hexadecimalNumber.fontcolor("hexadecimalNumber");
+        //second.innerText = this.hairColor.value;
+        //third.innerText = this.age.value;
+        //var fourth = document.querySelector('dt#fourth');
+        //fourth.innerText = this.birthplace.value;
+
+
+            //Example 3
+
+          var details = document.querySelector('.details');
+          var name = this.firstName;
+          var hairColor = this.hairColor;
+          var age = this.age;
+          var birthplace = this.birthplace;
+
+          details.innerHTML += ' \
+            <dl> \
+            <dt>Name</dt> \
+            <dd>'+ name.value +'</dd> \
+            \
+            <dt>Hair Color</dt> \
+            <dd>' +hairColor.value +'</dd> \
+            \
+            <dt>Age</dt> \
+            <dd>'+ age.value +'</dd> \
+            \
+            <dt>Birthplace</dt> \
+            <dd>'+ birthplace.value +'</dt> \
+            </dl> ';
 
       }; // is an assignment so semicolon
     </script>
